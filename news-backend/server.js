@@ -2,21 +2,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const dbURI = "mongodb+srv://catacutan111ite:r@neCatacuts089@cluster0.mtq49pc.mongodb.net/?retryWrites=true&w=majority&news_db=Cluster0";
-mongoose.connect(dbURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-  console.log('Connected to MongoDB Atlas');
-}).catch(err => {
-  console.error('Failed to connect to MongoDB Atlas', err);
-});
+// Connect to MongoDB
+const dbURI = "mongodb+srv://catacutan111ite:r@neCatacuts089@cluster0.mtq49pc.mongodb.net/news_db?retryWrites=true&w=majority";
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
 
 // Define a news schema and model
 const newsSchema = new mongoose.Schema({

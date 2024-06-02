@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Replace with your actual MongoDB connection string
-const dbURI = "mongodb+srv://catacutan111ite:r@neCatacuts089@cluster0.mtq49pc.mongodb.net/?retryWrites=true&w=majority&news_db=Cluster0";
+const dbURI = "mongodb+srv://catacutan111ite:r@neCatacuts089@cluster0.mtq49pc.mongodb.net/news_db?retryWrites=true&w=majority";
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const newsSchema = new mongoose.Schema({
