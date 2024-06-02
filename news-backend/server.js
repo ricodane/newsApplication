@@ -2,13 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+require('dotenv').config(); // Ensure this line is present to load environment variables
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
 // Connect to MongoDB
-const dbURI = "mongodb+srv://catacutan111ite:r@neCatacuts089@cluster0.mtq49pc.mongodb.net/news_db?retryWrites=true&w=majority";
+const dbURI = process.env.MONGODB_URI;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
