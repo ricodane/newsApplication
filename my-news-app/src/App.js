@@ -14,14 +14,14 @@ const App = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/news');
+        const response = await axios.get('https://newsapplication-wcw1.onrender.com/news');
         setNews(response.data);
       } catch (error) {
         console.error('Error fetching news', error);
       }
     };
     fetchNews();
-  }, []);
+  }, []);  
 
   const handleDelete = (id) => {
     setNews(news.filter((item) => item._id !== id));

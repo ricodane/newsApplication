@@ -6,7 +6,9 @@ require('dotenv').config(); // Ensure this line is present to load environment v
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://newsapplication-1.onrender.com/' // Replace with your actual frontend URL
+}));
 
 // Connect to MongoDB
 const dbURI = process.env.MONGODB_URI;
