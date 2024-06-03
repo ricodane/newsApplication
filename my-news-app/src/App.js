@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('https://newsapplication-wcw1.onrender.com/news');
+        const response = await axios.get('https://newsapplication-smcb.onrender.com/news');
         setNews(response.data);
       } catch (error) {
         console.error('Error fetching news', error);
